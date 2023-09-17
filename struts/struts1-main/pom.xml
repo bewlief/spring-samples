@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.weblegacy</groupId>
+    <artifactId>struts-parent</artifactId>
+    <version>1.4.5-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Struts</name>
+    <url>https://weblegacy.github.io/struts1</url>
+    <description>
+        The goal of the Apache Struts project is to encourage application
+        architectures based on the "Model 2" approach, a variation of the classic
+        Model-View-Controller (MVC) design paradigm. Under Model 2, a servlet (or
+        equivalent) manages business logic execution, and presentation logic
+        resides mainly in server pages.
+    </description>
+
+    <inceptionYear>2000</inceptionYear>
+
+    <organization>
+        <name>Web-Legacy</name>
+        <url>https://github.com/weblegacy</url>
+    </organization>
+
+    <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false" >
+        <connection>scm:git:https://github.com/weblegacy/struts1.git</connection>
+        <developerConnection>scm:git:git@github.com:weblegacy/struts1.git</developerConnection>
+        <url>https://github.com/weblegacy/struts1</url>
+    </scm>
+
+    <mailingLists>
+        <mailingList>
+            <name>Struts User List</name>
+            <subscribe>user-subscribe@struts.apache.org</subscribe>
+            <unsubscribe>user-unsubscribe@struts.apache.org</unsubscribe>
+            <post>user@struts.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/struts-user/</archive>
+            <otherArchives>
+                <otherArchive>http://struts.apache.org/mail.html#Archives</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Struts Developer List</name>
+            <subscribe>dev-subscribe@struts.apache.org</subscribe>
+            <unsubscribe>dev-unsubscribe@struts.apache.org</unsubscribe>
+            <post>dev@struts.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/struts-dev/</archive>
+            <otherArchives>
+                <otherArchive>http://struts.apache.org/mail.html#Archives</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Struts Commits List</name>
+            <subscribe>commits-subscribe@struts.apache.org</subscribe>
+            <unsubscribe>commits-unsubscribe@struts.apache.org</unsubscribe>
+            <archive>http://mail-archives.apache.org/mod_mbox/struts-commits/</archive>
+            <otherArchives>
+                <otherArchive>http://struts.apache.org/mail.html#Archives</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Struts Issues List</name>
+            <subscribe>issues-subscribe@struts.apache.org</subscribe>
+            <unsubscribe>issues-unsubscribe@struts.apache.org</unsubscribe>
+            <archive>http://mail-archives.apache.org/mod_mbox/struts-issues/</archive>
+            <otherArchives>
+                <otherArchive>http://struts.apache.org/mail.html#Archives</otherArchive>
+            </otherArchives>
+        </mailingList>
+    </mailingLists>
+
+    <developers>
+        <developer>
+            <id>ste-gr</id>
+            <name>Stefan Graff</name>
+            <email>stefan.graff@gmx.at</email>
+            <url>https://github.com/ste-gr</url>
+            <roles>
+                <role>architect (since 2022)</role>
+                <role>developer (since 2022)</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <name>Craig R. McClanahan</name>
+            <id>craigmcc</id>
+            <email>craigmcc at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Ted Husted</name>
+            <id>husted</id>
+            <email>husted at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Cedric Dumoulin</name>
+            <id>cedric</id>
+            <email>cedric.dumoulin at lifl.fr</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Martin Cooper</name>
+            <id>martinc</id>
+            <email>martinc at apache.org</email>
+            <roles>
+                <role>PMC Chair</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>James Holmes</name>
+            <id>jholmes</id>
+            <email>jholmes at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>David M. Karr</name>
+            <id>dmkarr</id>
+            <email>dmkarr at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Eddie Bush</name>
+            <id>ekbush</id>
+            <email>ekbush at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>David Graham</name>
+            <id>dgraham</id>
+            <email>dgraham at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>James Mitchell</name>
+            <id>jmitchell</id>
+            <email>jmitchell at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Don Brown</name>
+            <id>mrdon</id>
+            <email>mrdon at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Joe Germuska</name>
+            <id>germuska</id>
+            <email>germuska at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Niall Pemberton</name>
+            <id>niallp</id>
+            <email>niallp at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Hubert Rabago</name>
+            <id>hrabago</id>
+            <email>hrabago at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>David Geary</name>
+            <id>dgeary</id>
+            <email>dgeary at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Wendy Smoak</name>
+            <id>wsmoak</id>
+            <email>wsmoak at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Gary VanMatre</name>
+            <id>gvanmatre</id>
+            <email>gvanmatre at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Sean Schofield</name>
+            <id>schof</id>
+            <email>schof at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Greg Reddin</name>
+            <id>greddin</id>
+            <email>greddin at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Laurie Harper</name>
+            <id>laurieh</id>
+            <email>laurieh at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Richard Feit</name>
+            <id>rich</id>
+            <email>rich at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Jason Carreira</name>
+            <id>jcarreira</id>
+            <email>jcarreira at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Patrick Lightbody</name>
+            <id>plightbo</id>
+            <email>plightbo at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Alexandru Popescu</name>
+            <id>apopescu</id>
+            <email>apopescu at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Rene Gielen</name>
+            <id>rgielen</id>
+            <email>rgielen at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Rainer Hermanns</name>
+            <id>hermanns</id>
+            <email>hermanns at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Toby Jee</name>
+            <id>tmjee</id>
+            <email>tmjee at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Ian Roughley</name>
+            <id>roughley</id>
+            <email>roughley at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Paul Benedict</name>
+            <id></id>
+            <email></email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Michael Jouravlev</name>
+            <id>mikus</id>
+            <email>mikus at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Bob Lee</name>
+            <id>crazybob</id>
+            <email>crazybob at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>David H. DeWolf</name>
+            <id>ddewolf</id>
+            <email>ddewolf at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/weblegacy/struts1/issues/</url>
+    </issueManagement>
+
+    <properties>
+        <encoding>UTF-8</encoding>
+        <propertiesEncoding>ISO-8859-1</propertiesEncoding>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+        <mavenVersion>[3.5.4,4)</mavenVersion>
+        <javaVersion>8</javaVersion>
+        <javaTestVersion>8</javaTestVersion>
+        <groovyVersion>4.0.6</groovyVersion>
+        <seleniumVersion>4.6.0</seleniumVersion>
+        <slf4jVersion>2.0.3</slf4jVersion>
+        <tilesVersion>3.0.8</tilesVersion>
+        <tilesRequestVersion>1.0.7</tilesRequestVersion>
+        <antlrVersion>4.11.1</antlrVersion>
+        <servletVersion>5.0.0</servletVersion>
+        <jspVersion>3.0.0</jspVersion>
+        <jstlVersion>2.0.0</jstlVersion>
+        <elVersion>4.0.0</elVersion>
+        <jsfVersion>3.0.0</jsfVersion>
+        <jsfImplVersion>3.0.2</jsfImplVersion>
+        <jaxbVersion>2.3.7</jaxbVersion>
+        <struts.osgi.symbolicName>org.apache.${project.artifactId}</struts.osgi.symbolicName>
+        <struts.osgi.export>org.apache.struts.*;version=${project.version}</struts.osgi.export>
+        <struts.osgi.import>*</struts.osgi.import>
+        <struts.osgi.dynamicImport />
+        <struts.osgi.private />
+        <struts.manifestfile>target/osgi/MANIFEST.MF</struts.manifestfile>
+        <struts.jpms.moduleName>${struts.osgi.symbolicName}</struts.jpms.moduleName>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>apps</id>
+            <activation>
+                <property>
+                    <name>apps</name>
+                </property>
+            </activation>
+            <modules>
+                <module>apps</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>dormant</id>
+            <activation>
+                <property>
+                    <name>dormant</name>
+                </property>
+            </activation>
+            <modules>
+                <module>el</module>
+                <module>faces</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>itest</id>
+            <activation>
+                <property>
+                    <name>itest</name>
+                </property>
+            </activation>
+            <modules>
+                <module>integration</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>pre-assembly</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>3.3.2</version>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadoc</id>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                    <configuration>
+                                        <failOnError>false</failOnError>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>3.2.1</version>
+                            <executions>
+                                <execution>
+                                    <id>attach-source</id>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>assembly</id>
+            <activation>
+                <property>
+                    <name>assembly</name>
+                </property>
+            </activation>
+            <modules>
+                <module>assembly</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>release</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+    <modules>
+        <module>core</module>
+        <module>extras</module>
+        <module>scripting</module>
+        <module>taglib</module>
+        <module>tiles</module>
+        <module>tiles2</module>
+    </modules>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments/>
+        </license>
+    </licenses>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.4.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-changes-plugin</artifactId>
+                    <version>2.12.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.1.2</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>10.4</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.10.1</version>
+                    <configuration>
+                        <release>${javaVersion}</release>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
+                        <compilerArgs>
+                            <arg>-Xlint:all</arg>
+                            <arg>-Xlint:-processing</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>3.0.0-M7</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>3.0.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.4.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <configuration>
+                        <encoding>${encoding}</encoding>
+                        <propertiesEncoding>${propertiesEncoding}</propertiesEncoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.12.0</version>
+                    <configuration>
+                        <skipDeploy>true</skipDeploy>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.2.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.2</version>
+                    <configuration>
+                        <archive>
+                            <manifestFile>${struts.manifestfile}</manifestFile>
+                            <manifest>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Automatic-Module-Name>${struts.jpms.moduleName}</Automatic-Module-Name>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>3.17.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M7</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>3.0.0-M7</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>net.sf.dtddoc</groupId>
+                    <artifactId>dtddoc-maven-plugin</artifactId>
+                    <version>1.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.github.weblegacy</groupId>
+                    <artifactId>taglib-maven-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <parseHtml>true</parseHtml>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.antlr</groupId>
+                    <artifactId>antlr4-maven-plugin</artifactId>
+                    <version>${antlrVersion}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>5.1.7</version>
+                    <inherited>true</inherited>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.cargo</groupId>
+                    <artifactId>cargo-maven3-plugin</artifactId>
+                    <version>1.9.13</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <source>${javaTestVersion}</source>
+                            <target>${javaTestVersion}</target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+               <artifactId>maven-resources-plugin</artifactId>
+               <inherited>false</inherited>
+               <executions>
+                  <execution>
+                     <id>copy-dtds</id>
+                     <phase>site</phase>
+                     <configuration>
+                        <outputDirectory>${project.build.directory}/site/dtds</outputDirectory>
+                        <resources>
+                           <resource>
+                              <directory>${project.basedir}/core/src/main/resources/org/apache/struts/resources</directory>
+                           </resource>
+                           <resource>
+                              <directory>${project.basedir}/tiles/src/main/resources/org/apache/struts/resources</directory>
+                           </resource>
+                        </resources>
+                     </configuration>
+                     <goals>
+                        <goal>copy-resources</goal>
+                     </goals>
+                  </execution>
+               </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>[11,)</version>
+                                </requireJavaVersion>
+                                <requireMavenVersion>
+                                    <version>${mavenVersion}</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <configuration>
+                    <scmBranch>gh-pages</scmBranch>
+                    <tryUpdate>true</tryUpdate>
+                    <checkinComment>Site checkin for project ${project.name}, version ${project.version}.</checkinComment>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>scm-publish</id>
+                        <phase>site-deploy</phase>
+                        <goals>
+                            <goal>publish-scm</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <topSiteURL>scm:git:git@github.com:weblegacy/struts1</topSiteURL>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-descriptor</id>
+                        <goals>
+                            <goal>attach-descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <noWarningProjectTypes>
+                        <noWarningProjectType>war</noWarningProjectType>
+                        <noWarningProjectType>pom</noWarningProjectType>
+                    </noWarningProjectTypes>
+                    <excludeDependencies>true</excludeDependencies>
+                    <manifestLocation>target/osgi</manifestLocation>
+                    <instructions>
+                        <Bundle-SymbolicName>${struts.osgi.symbolicName}</Bundle-SymbolicName>
+                        <Export-Package>${struts.osgi.export}</Export-Package>
+                        <Private-Package>${struts.osgi.private}</Private-Package>
+                        <Import-Package>${struts.osgi.import}</Import-Package>
+                        <DynamicImport-Package>${struts.osgi.dynamicImport}</DynamicImport-Package>
+                        <Bundle-DocURL>${project.url}</Bundle-DocURL>
+                    </instructions>
+                    <supportIncrementalBuild>true</supportIncrementalBuild>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+        <defaultGoal>install</defaultGoal>
+
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                  <detectLinks>true</detectLinks>
+                  <dependencyLinks>
+                    <dependencyLink>
+                      <groupId>org.junit.jupiter</groupId>
+                      <artifactId>junit-jupiter-api</artifactId>
+                      <url>https://junit.org/junit5/docs/current/api</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.apache.tiles</groupId>
+                      <artifactId>tiles-api</artifactId>
+                      <url>https://tiles.apache.org/framework/apidocs/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.apache.tiles</groupId>
+                      <artifactId>tiles-core</artifactId>
+                      <url>https://tiles.apache.org/framework/apidocs/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.apache.tiles</groupId>
+                      <artifactId>tiles-request-api</artifactId>
+                      <url>https://tiles.apache.org/tiles-request/apidocs/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.apache.tiles</groupId>
+                      <artifactId>tiles-request-servlet</artifactId>
+                      <url>https://tiles.apache.org/tiles-request/apidocs/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.antlr</groupId>
+                      <artifactId>antlr4-runtime</artifactId>
+                      <url>https://www.antlr.org/api/Java/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.apache.groovy</groupId>
+                      <artifactId>groovy-jsr223</artifactId>
+                      <url>https://javadoc.io/doc/org.apache.groovy/groovy-all/${groovyVersion}/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>jakarta.servlet</groupId>
+                      <artifactId>jakarta.servlet-api</artifactId>
+                      <url>https://javadoc.io/doc/jakarta.servlet/jakarta.servlet-api/${servletVersion}/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>jakarta.servlet.jsp</groupId>
+                      <artifactId>jakarta.servlet.jsp-api</artifactId>
+                      <url>https://javadoc.io/doc/jakarta.servlet.jsp/jakarta.servlet.jsp-api/${jspVersion}/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>jakarta.el</groupId>
+                      <artifactId>jakarta.el-api</artifactId>
+                      <url>https://javadoc.io/doc/jakarta.el/jakarta.el-api/${elVersion}/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>jakarta.servlet.jsp.jstl</groupId>
+                      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+                      <url>https://javadoc.io/doc/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api/${jstlVersion}/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>jakarta.faces</groupId>
+                      <artifactId>jakarta.faces-api</artifactId>
+                      <url>https://javadoc.io/doc/jakarta.faces/jakarta.faces-api/${jsfVersion}/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.jboss.weld.servlet</groupId>
+                      <artifactId>weld-servlet-shaded</artifactId>
+                      <url>https://javadoc.io/doc/org.jboss.weld/weld-api/3.1.SP4/</url>
+                    </dependencyLink>
+                    <dependencyLink>
+                      <groupId>org.glassfish.jaxb</groupId>
+                      <artifactId>jaxb-runtime</artifactId>
+                      <url>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-runtime/${jaxbVersion}/</url>
+                    </dependencyLink>
+                  </dependencyLinks>
+                  <links>
+                    <link>https://jakarta.ee/specifications/platform/8/apidocs</link>
+                  </links>
+                  <failOnError>false</failOnError>
+                  <quiet>true</quiet>
+                  <doclint>none</doclint>
+                  <notimestamp>true</notimestamp>
+                  <source>${javaVersion}</source>
+                </configuration>
+                <reportSets>
+                  <reportSet>
+                    <id>aggregate</id>
+                    <inherited>false</inherited>
+                    <reports>
+                      <report>aggregate</report>
+                    </reports>
+                    <configuration>
+                      <excludePackageNames>examples:examples.*:org.apache.struts.webapp:org.apache.struts.webapp.*:org.apache.struts.apps.mailreader:org.apache.struts.apps.mailreader.*:org.apache.struts.apps.scriptingmailreader:org.apache.struts.apps.scriptingmailreader.*</excludePackageNames>
+                    </configuration>
+                  </reportSet>
+                  <reportSet>
+                    <id>default</id>
+                    <reports>
+                      <report>javadoc</report>
+                      <report>test-javadoc</report>
+                    </reports>
+                  </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                  <configLocation>struts_checks.xml</configLocation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <reportSets>
+                  <reportSet>
+                    <id>aggregate</id>
+                    <configuration>
+                      <skip>true</skip>
+                    </configuration>
+                  </reportSet>
+                  <reportSet>
+                    <id>default</id>
+                    <reports>
+                      <report>jxr</report>
+                      <report>test-jxr</report>
+                    </reports>
+                  </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>net.sf.dtddoc</groupId>
+                <artifactId>dtddoc-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/web-app*</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-runtime</artifactId>
+                <version>${antlrVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.4</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>commons-chain</groupId>
+                <artifactId>commons-chain</artifactId>
+                <version>1.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>myfaces</groupId>
+                        <artifactId>myfaces-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.portlet</groupId>
+                        <artifactId>portlet-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>commons-digester</groupId>
+                <artifactId>commons-digester</artifactId>
+                <version>2.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>1.4</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.11.0</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>1.7</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${jaxbVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${servletVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.servlet.jsp</groupId>
+                <artifactId>jakarta.servlet.jsp-api</artifactId>
+                <version>${jspVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.el</groupId>
+                <artifactId>jakarta.el-api</artifactId>
+                <version>${elVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.servlet.jsp.jstl</groupId>
+                <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+                <version>${jstlVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.web</groupId>
+                <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+                <version>${jstlVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.faces</groupId>
+                <artifactId>jakarta.faces-api</artifactId>
+                <version>${jsfVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>jakarta.faces</artifactId>
+                <version>${jsfImplVersion}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.weld.servlet</groupId>
+                <artifactId>weld-servlet-shaded</artifactId>
+                <version>3.1.9.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4jVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4jVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4jVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>5.9.1</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.htmlunit</groupId>
+                <artifactId>htmlunit</artifactId>
+                <version>2.66.0</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-annotations</artifactId>
+                <version>4.7.3</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${seleniumVersion}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${seleniumVersion}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.bonigarcia</groupId>
+                <artifactId>webdrivermanager</artifactId>
+                <version>5.3.1</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.groovy</groupId>
+                <artifactId>groovy-jsr223</artifactId>
+                <version>${groovyVersion}</version>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.tiles</groupId>
+               <artifactId>tiles-api</artifactId>
+               <version>${tilesVersion}</version>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.tiles</groupId>
+               <artifactId>tiles-core</artifactId>
+               <version>${tilesVersion}</version>
+               <exclusions>
+                  <exclusion>
+                     <groupId>org.slf4j</groupId>
+                     <artifactId>jcl-over-slf4j</artifactId>
+                  </exclusion>
+               </exclusions>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.tiles</groupId>
+               <artifactId>tiles-request-api</artifactId>
+               <version>${tilesRequestVersion}</version>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.tiles</groupId>
+               <artifactId>tiles-request-servlet</artifactId>
+               <version>${tilesRequestVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-blank</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-cookbook</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-examples</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-faces-example1</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-faces-example2</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-mailreader</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-scripting-mailreader</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-el-example</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-core</artifactId>
+                <version>${project.version}</version>
+                <classifier>tests</classifier>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-extras</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-el</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-faces</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-scripting</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-taglib</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-tiles</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-tiles2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>struts-mailreader-dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <site>
+            <id>github</id>
+            <url>scm:git:git@github.com:weblegacy/struts1</url>
+        </site>
+        <downloadUrl>https://github.com/weblegacy/struts1/releases</downloadUrl>
+    </distributionManagement>
+</project>

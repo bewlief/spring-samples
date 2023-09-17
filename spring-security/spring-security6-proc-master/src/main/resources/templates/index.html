@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html xmlns:th="//www.thymeleaf.org" xmlns:sec="//www.thymeleaf.org/extras/spring-security">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/webjars/jquery/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				getCategory();
+			})
+			
+			/* get 요청이므로 csrf 필요 없음 */
+			function getCategory(){
+				$.get(
+					"/common/category", /* permitAll() 보안 적용된 common */
+					function(result){ /* success function: success는 생략 가능 */
+						$("#category").html(result);
+					}
+				)
+			}
+		</script>
+	</head>
+
+	<body>
+		
+		<!-- sec:authorize=""는 th:if="${#authorization.expression()}"로도 표현 가능 -->
+		
+		<th:block th:if="${#authorization.expr('isAnonymous()')}"> <!-- expr()로 줄여쓰기 가능 -->
+			<span>비회원</span>
+		</th:block>
+		
+		<th:block sec:authorize="isAnonymous()">
+			<a href="/signin">로그인</a>
+			
+			<a href="/signup">회원가입</a>
+		</th:block>
+		
+		<th:block sec:authorize="isAuthenticated()">
+		
+			<!-- role 부여하는 방법 -->
+			
+			<!-- <th:block th:each="role : ${#authentication.principal.authorities}">
+				<span th:text="${role}"></span>
+			</th:block>
+			
+			<span sec:authentication="principal.authorities"></span>
+			
+			<span sec:authorize="hasRole('ADMIN')" th:text="${T(com.green.nowon.security.MyRole).ADMIN.koName}"></span> -->
+			
+			<span>
+				<!-- principal 객체는 UserDetails 클래스를 통해 만들어짐. 아래 세가지 모두 같은 값. -->
+					<!-- <span sec:authentication="name">로그인ID(email)</span> -->
+	
+					<!-- principal의 기본값 -->
+					<!-- <span sec:authentication="principal.username">로그인ID(email)</span> -->
+	
+					<!-- 새로운 필드를 만들어서 세팅 -->
+					<span sec:authentication="principal.email">로그인ID(email)</span>
+				
+				
+				<!-- 우리가 새로 만든 principal 객체. 인증이 필요하므로 th:block으로 if문 처리. -->
+				(<span sec:authentication="principal.nickName">닉네임</span>)
+			</span>
+			
+			<form action="/logout" method="post" style="display: inline-block;">
+				<input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+				<button>로그아웃</button>
+			</form>
+			<a sec:authorize="hasRole('ADMIN')" href="/admin">관리자페이지</a>
+		</th:block>
+		
+		<hr>
+		
+		<h1>인덱스 페이지</h1>
+		
+		<hr>
+		
+		<section>
+			<h1>카테고리</h1>
+			<div id="category">
+				
+			</div>
+		</section>
+		
+	</body>
+
+</html>

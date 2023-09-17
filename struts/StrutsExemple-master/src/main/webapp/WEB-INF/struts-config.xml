@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans type="org.apache.struts.action.ActionFormBean">
+		<!-- HelloWorld Form -->
+		<form-bean name="helloWorldForm" type="com.adservio.tutu.form.HelloWorldForm"></form-bean>
+		<!--Login Form -->
+		<form-bean name="loginForm" type="com.adservio.tutu.form.LoginForm"></form-bean>
+		<!-- Creation Form - -->
+		<form-bean name="creationForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="libelle" type="java.lang.String" />
+			<form-property name="quantite" type="java.lang.String" />
+		</form-bean>
+		<!-- Supression Form -->
+		<form-bean name="suppressionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+	<action-mappings type="org.apache.struts.action.ActionMapping">
+
+		<action path="/page/AfficherCreationElementCourses" name="creationForm"
+			type="com.adservio.tutu.action.AfficherListeCoursesAction" scope="request"
+			validate="false" attribute="bean">
+			<forward name="succes" path="/page/creation.jsp" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+
+		<action path="/page/CreerCreationElementCourses" name="creationForm"
+			type="com.adservio.tutu.action.CreerElementCoursesAction" scope="request"
+			validate="true" attribute="bean" input="/page/AfficherCreationElementCourses.do">
+			<forward name="succes" path="/page/AfficherCreationElementCourses.do" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+
+		<action path="/page/AfficherSuppressionElementCourses" name="suppressionForm"
+			type="com.adservio.tutu.action.AfficherListeCoursesAction" scope="request"
+			validate="false" attribute="bean">
+			<forward name="succes" path="/page/suppression.jsp" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+
+		<action path="/page/SupprimerSuppressionElementCourses" name="suppressionForm"
+			type="com.adservio.tutu.action.SupprimerElementCoursesAction" scope="request"
+			validate="false" attribute="bean">
+			<forward name="succes" path="/page/AfficherSuppressionElementCourses.do" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+
+
+		<action path="/page/login" parameter="" input="/page/login.do"
+			scope="request" name="loginForm" type="com.adservio.tutu.action.LoginAction">
+			<forward name="succes" path="/page/accueil.jsp" />
+			<forward name="echec" path="/page/login.jsp" />
+		</action>
+
+		<action path="/page/helloWorld" name="helloWorldForm"
+			type="com.adservio.tutu.action.HelloWorldAction">
+			<forward name="succes" path="/page/helloWorld.jsp"></forward>
+		</action>
+
+		<!-- Indique la correspondance entre une action sous forme d'URL (ici /AfficherListeCourses.do), 
+			une classe (ici com.adservio.tutu.action.AfficherListeCoursesAction.AfficherListeCoursesAction) -->
+		<action path="/page/AfficherListeCourses"
+			type="com.adservio.tutu.action.AfficherListeCoursesAction">
+			<forward name="succes" path="/page/listeCourses.jsp" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+	</action-mappings>
+
+	<message-resources parameter="resources_fr"></message-resources>
+
+	<!-- ========== Validation des formulaires =========================== -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,/WEB-INF/validation-creation.xml" />
+	</plug-in>
+
+
+</struts-config>

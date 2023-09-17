@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+<struts-config>
+
+	<!-- ========== Form Bean Definitions ============ -->
+	<form-beans>
+		<form-bean name="login" type="com.sample.form.LoginForm" />
+	</form-beans>
+
+
+	<!-- ========== Global Forward Definitions ========= -->
+	<global-forwards>
+	</global-forwards>
+
+
+	<!-- ========== Action Mapping Definitions ======== -->
+	<action-mappings>
+		<action path="/login" type="com.sample.action.LoginAction">
+			<forward name="success" path="/jsp/success.jsp" />
+		</action>
+	</action-mappings>
+
+</struts-config>        

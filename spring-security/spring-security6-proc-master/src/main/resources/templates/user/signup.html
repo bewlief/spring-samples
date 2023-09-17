@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="//www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+
+	<body>
+		<a href="/">HOME</a>
+		<h1>회원가입 페이지</h1>
+		
+		<form action="/signup" method="post">
+			<p>
+				<input type="text" placeholder="이메일" name="email">
+			</p>
+			<p>
+				<input type="password" placeholder="비밀번호" name="pass">
+			</p>
+			<p>
+				<input type="text" placeholder="닉네임" name="nickName">
+			</p>
+			<p>
+				<!-- csrf 토큰 적용 -->
+				<input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+				
+				<button>회원가입</button>
+			</p>
+		</form>
+	</body>
+
+</html>

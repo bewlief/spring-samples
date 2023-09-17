@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+	<formset>
+		<form name="/page/CreerCreationElementCourses">
+			<!-- Contraintes sur le champs libelle : required -->
+			<field property="libelle" depends="required">
+				<msg name="required" key="creation.libelle.error.required" />
+			</field>
+			<!-- Contraintes sur le champ quantite : required et numerique -->
+			<field property="quantite" depends="required,integer">
+				<msg name="required" key="creation.quantité.error.required" />
+				<msg name="integer" key="creation.quantité.error.integer" />
+			</field>
+		</form>
+	</formset>
+</form-validation>

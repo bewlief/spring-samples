@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    $Id$
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>struts-assembly</artifactId>
+  <packaging>pom</packaging>
+  <name>Struts Assembly</name>
+  <description>
+    Struts 1 Assembly
+  </description>
+
+  <parent>
+    <groupId>io.github.weblegacy</groupId>
+    <artifactId>struts-parent</artifactId>
+    <version>1.4.5-SNAPSHOT</version>
+  </parent>
+
+  <build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>copy-war</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>copy</goal>
+                    </goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-blank</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-cookbook</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-examples</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-faces-example1</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-faces-example2</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-mailreader</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-scripting-mailreader</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                            <artifactItem>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>struts-el-example</artifactId>
+                                <version>${project.version}</version>
+                                <type>war</type>
+                            </artifactItem>
+                        </artifactItems>
+                        <outputDirectory>${project.build.directory}/apps</outputDirectory>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>${project.basedir}/src/main/assembly/all.xml</descriptor>
+            <descriptor>${project.basedir}/src/main/assembly/lib.xml</descriptor>
+            <descriptor>${project.basedir}/src/main/assembly/apps.xml</descriptor>
+            <descriptor>${project.basedir}/src/main/assembly/src.xml</descriptor>
+            <descriptor>${project.basedir}/src/main/assembly/docs.xml</descriptor>
+          </descriptors>
+          <finalName>struts-${project.version}</finalName>
+          <outputDirectory>${project.build.directory}/assembly/out</outputDirectory>
+          <workDirectory>${project.build.directory}/assembly/work</workDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-extras</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-el</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-faces</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-scripting</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-taglib</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-tiles</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>struts-tiles2</artifactId>
+    </dependency>
+
+    <!-- Include optional dependencies -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <optional>false</optional>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <optional>false</optional>
+    </dependency>
+
+  </dependencies>
+
+</project>

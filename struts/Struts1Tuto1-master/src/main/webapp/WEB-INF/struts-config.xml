@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="userForm" type="com.joseoliveros.textboxexample.UserForm"/>
+
+        <form-bean name="helloWorldForm" type="com.joseoliveros.helloworld.HelloWorldForm"/>
+
+    </form-beans>
+
+    <action-mappings>
+
+        <action path="/helloWorld" type="com.joseoliveros.helloworld.HelloWorldAction" name="helloWorldForm">
+            <forward name="success" path="/HelloWorld.jsp"/>
+        </action>
+
+        <action
+                path="/LoginPage"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/pages/login.jsp"/>
+
+        <action
+                path="/Login"
+                type="com.joseoliveros.textboxexample.UserAction"
+                name="userForm"
+                input="/pages/login.jsp">
+
+            <forward name="success" path="/pages/welcome.jsp"/>
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="Common" />
+
+</struts-config>

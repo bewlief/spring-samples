@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    $Id$
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd"
+ name="Struts 1">
+    <bannerLeft>
+        <name>Apache Software Foundation</name>
+        <src>images/asf-logo.png</src>
+        <href>https://www.apache.org/</href>
+    </bannerLeft>
+    <bannerRight>
+        <name>Apache Struts</name>
+        <src>images/struts.png</src>
+        <href>https://struts.apache.org/index.html</href>
+    </bannerRight>
+    <body>
+        <links>
+            <item name="Apache" href="https://www.apache.org/" />
+            <item name="Struts" href="https://struts.apache.org/index.html" />
+        </links>
+        <menu name="Struts 1">
+            <item
+                    name="Welcome"
+                    href="index.html"
+                    />
+            <item
+                    name="Learning"
+                    href="learning.html"
+                    />
+            <item
+                    name="Roadmap"
+                    href="roadmap.html"
+                    />
+            <item
+                    name="Releases"
+                    href="https://github.com/weblegacy/struts1/releases"/>
+            <item
+                    name="Thanks!"
+                    href="https://www.apache.org/foundation/thanks.html"/>
+            <item
+                    name="Sponsorship"
+                    href="https://www.apache.org/foundation/sponsorship.html"/>
+        </menu>
+
+        <menu name="Documentation">
+            <item
+                    name="User Guide"
+                    href="userGuide/index.html"
+                    />
+            <item
+                    name="FAQs and HOWTOs"
+                    href="faqs/index.html"
+                    />
+            <item
+                    name="Release Notes"
+                    href="userGuide/release-notes.html"
+                    />
+            <item
+                    name="Javadoc"
+                    href="apidocs/index.html"
+                    />
+            <item
+                    name="DTDDoc"
+                    href="dtddoc/index.html"
+                    />
+        </menu>
+
+        <menu name="Support">
+            <item
+                    name="User Mailing List"
+                    href="https://struts.apache.org/mail.html"
+                    />
+            <item
+                    name="Issue Tracker (JIRA)"
+                    href="https://issues.apache.org/jira/browse/WW"
+                    />
+            <item
+                    name="Wiki Pages"
+                    href="https://cwiki.apache.org/confluence/display/WW/Home"
+                    />
+        </menu>
+
+        <menu name="Components">
+
+            <item   name="Struts Apps"
+                    href="struts-apps/index.html" />
+
+            <item   name="Struts Core"
+                    href="struts-core/index.html" />
+
+            <item   name="Struts EL"
+                    href="struts-el/index.html" />
+
+            <item   name="Struts Extras"
+                    href="struts-extras/index.html" />
+
+            <item   name="Struts Faces"
+                    href="struts-faces/index.html" />
+
+            <item   name="Struts Scripting"
+                    href="struts-scripting/index.html" />
+
+            <item   name="Struts Taglib"
+                    href="struts-taglib/index.html" />
+
+            <item   name="Struts Tiles"
+                    href="struts-tiles/index.html" />
+
+            <item   name="Struts Tiles2"
+                    href="struts-tiles2/index.html" />
+
+        </menu>
+
+        <menu ref="reports"/>
+    </body>
+</project>
